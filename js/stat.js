@@ -1,6 +1,6 @@
 'use strict';
 
-// var CLOUD_WIDTH = 420;
+var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
 var CLOUD_Y = 10;
@@ -21,38 +21,41 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   // ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT); // too boring :)
 
+  var cloudXGap = CLOUD_WIDTH / 6;
+  var cloudYGap = CLOUD_HEIGHT / 5;
+
   ctx.beginPath();
   ctx.moveTo(x, y);
 
   // Cloud top
-  ctx.bezierCurveTo(x, y, x + 30, y - getRandomInt(10, 20), x + 75, y);
-  ctx.bezierCurveTo(x + 75, y, x + 120, y - getRandomInt(10, 20), x + 150, y);
-  ctx.bezierCurveTo(x + 150, y, x + 185, y - getRandomInt(10, 20), x + 225, y);
-  ctx.bezierCurveTo(x + 225, y, x + 270, y - getRandomInt(10, 20), x + 300, y);
-  ctx.bezierCurveTo(x + 300, y, x + 325, y - getRandomInt(10, 20), x + 360, y);
-  ctx.bezierCurveTo(x + 360, y, x + 410, y - getRandomInt(10, 20), x + 420, y);
+  ctx.bezierCurveTo(x, y, x + 0.5 * cloudXGap, y - getRandomInt(10, 20), x + cloudXGap, y);
+  ctx.bezierCurveTo(x + cloudXGap, y, x + 1.5 * cloudXGap, y - getRandomInt(10, 20), x + 2 * cloudXGap, y);
+  ctx.bezierCurveTo(x + 2 * cloudXGap, y, x + 2.5 * cloudXGap, y - getRandomInt(10, 20), x + 3 * cloudXGap, y);
+  ctx.bezierCurveTo(x + 3 * cloudXGap, y, x + 3.5 * cloudXGap, y - getRandomInt(10, 20), x + 4 * cloudXGap, y);
+  ctx.bezierCurveTo(x + 4 * cloudXGap, y, x + 4.5 * cloudXGap, y - getRandomInt(10, 20), x + 5 * cloudXGap, y);
+  ctx.bezierCurveTo(x + 5 * cloudXGap, y, x + 5.5 * cloudXGap, y - getRandomInt(10, 20), x + CLOUD_WIDTH, y);
 
   // Cloud right
-  ctx.bezierCurveTo(x + 420, y, x + 420 + getRandomInt(30, 70), y + 10, x + 450, y + 50);
-  ctx.bezierCurveTo(x + 450, y + 50, x + 450 + getRandomInt(30, 70), y + 75, x + 480, y + 100);
-  ctx.bezierCurveTo(x + 480, y + 100, x + 480 + getRandomInt(30, 70), y + 120, x + 510, y + 150);
-  ctx.bezierCurveTo(x + 510, y + 150, x + 510 + getRandomInt(30, 70), y + 190, x + 470, y + 230);
-  ctx.bezierCurveTo(x + 470, y + 230, x + 470 + getRandomInt(30, 50), y + 250, x + 420, y + 270);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH, y, x + CLOUD_WIDTH + 0.25 * cloudXGap + getRandomInt(30, 50), y + 0.5 * cloudYGap, x + CLOUD_WIDTH + 0.5 * cloudXGap, y + cloudYGap);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH + 0.5 * cloudXGap, y + cloudYGap, x + CLOUD_WIDTH + 0.75 * cloudXGap + getRandomInt(30, 50), y + 1.5 * cloudYGap, x + CLOUD_WIDTH + cloudXGap, y + 2 * cloudYGap);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH + cloudXGap, y + 2 * cloudYGap, x + CLOUD_WIDTH + 1.25 * cloudXGap + getRandomInt(30, 50), y + 2.5 * cloudYGap, x + CLOUD_WIDTH + 1.5 * cloudXGap, y + 3 * cloudYGap);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH + 1.5 * cloudXGap, y + 3 * cloudYGap, x + CLOUD_WIDTH + 1.75 * cloudXGap + getRandomInt(30, 50), y + 3.5 * cloudYGap, x + CLOUD_WIDTH + cloudXGap, y + 4 * cloudYGap);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH + cloudXGap, y + 4 * cloudYGap, x +  + CLOUD_WIDTH + 0.5 * cloudXGap + getRandomInt(30, 50), y + 4.5 * cloudYGap, x + CLOUD_WIDTH, y + CLOUD_HEIGHT);
 
   // Cloud bottom
-  ctx.bezierCurveTo(x + 420, y + 270, x + 410, y + 270 + getRandomInt(10, 30), x + 360, y + 270);
-  ctx.bezierCurveTo(x + 360, y + 270, x + 330, y + 270 + getRandomInt(10, 30), x + 300, y + 270);
-  ctx.bezierCurveTo(x + 300, y + 270, x + 265, y + 270 + getRandomInt(10, 30), x + 225, y + 270);
-  ctx.bezierCurveTo(x + 225, y + 270, x + 190, y + 270 + getRandomInt(10, 30), x + 150, y + 270);
-  ctx.bezierCurveTo(x + 150, y + 270, x + 120, y + 270 + getRandomInt(10, 30), x + 75, y + 270);
-  ctx.bezierCurveTo(x + 75, y + 270, x + 20, y + 270 + getRandomInt(10, 30), x, y + 270);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH, y + CLOUD_HEIGHT, x + 5.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x + 5 * cloudXGap, y + CLOUD_HEIGHT);
+  ctx.bezierCurveTo(x + 5 * cloudXGap, y + CLOUD_HEIGHT, x + 4.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x + 4 * cloudXGap, y + CLOUD_HEIGHT);
+  ctx.bezierCurveTo(x + 4 * cloudXGap, y + CLOUD_HEIGHT, x + 3.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x + 3 * cloudXGap, y + CLOUD_HEIGHT);
+  ctx.bezierCurveTo(x + 3 * cloudXGap, y + CLOUD_HEIGHT, x + 2.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x + 2 * cloudXGap, y + CLOUD_HEIGHT);
+  ctx.bezierCurveTo(x + 2 * cloudXGap, y + CLOUD_HEIGHT, x + 1.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x + cloudXGap, y + CLOUD_HEIGHT);
+  ctx.bezierCurveTo(x + cloudXGap, y + CLOUD_HEIGHT, x + 0.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x, y + CLOUD_HEIGHT);
 
   // Cloud left
-  ctx.bezierCurveTo(x, y + 270, x - getRandomInt(10, 70), y + 250, x - 30, y + 230);
-  ctx.bezierCurveTo(x - 30, y + 230, x - 30 - getRandomInt(30, 70), y + 190, x - 60, y + 170);
-  ctx.bezierCurveTo(x - 60, y + 170, x - 60 - getRandomInt(30, 70), y + 120, x - 50, y + 100);
-  ctx.bezierCurveTo(x - 50, y + 100, x - 50 - getRandomInt(30, 70), y + 75, x - 30, y + 50);
-  ctx.bezierCurveTo(x - 30, y + 50, x - 30 - getRandomInt(30, 70), y + 10, x, y);
+  ctx.bezierCurveTo(x, y + CLOUD_HEIGHT, x - 0.25 * cloudXGap - getRandomInt(10, 50), y + 4.5 * cloudYGap, x - 0.5 * cloudXGap, y + 4 * cloudYGap);
+  ctx.bezierCurveTo(x - 0.5 * cloudXGap, y + 4 * cloudYGap, x - 0.75 * cloudXGap - getRandomInt(30, 50), y + 3.5 * cloudYGap, x - cloudXGap, y + 3 * cloudYGap);
+  ctx.bezierCurveTo(x - cloudXGap, y + 3 * cloudYGap, x - 1.1 * cloudXGap - getRandomInt(30, 50), y + 2.5 * cloudYGap, x - 1.2 * cloudXGap, y + 2 * cloudYGap);
+  ctx.bezierCurveTo(x - 1.2 * cloudXGap, y + 2 * cloudYGap, x - 1.1 * cloudXGap - getRandomInt(30, 50), y + 1.5 * cloudYGap, x - cloudXGap, y + cloudYGap);
+  ctx.bezierCurveTo(x - cloudXGap, y + cloudYGap, x - 0.5 * cloudXGap - getRandomInt(30, 50), y + 0.5 * cloudYGap, x, y);
 
   ctx.closePath();
   ctx.fill();
