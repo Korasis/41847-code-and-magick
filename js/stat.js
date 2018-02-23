@@ -40,7 +40,7 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.bezierCurveTo(x + CLOUD_WIDTH + 0.5 * cloudXGap, y + cloudYGap, x + CLOUD_WIDTH + 0.75 * cloudXGap + getRandomInt(30, 50), y + 1.5 * cloudYGap, x + CLOUD_WIDTH + cloudXGap, y + 2 * cloudYGap);
   ctx.bezierCurveTo(x + CLOUD_WIDTH + cloudXGap, y + 2 * cloudYGap, x + CLOUD_WIDTH + 1.25 * cloudXGap + getRandomInt(30, 50), y + 2.5 * cloudYGap, x + CLOUD_WIDTH + 1.5 * cloudXGap, y + 3 * cloudYGap);
   ctx.bezierCurveTo(x + CLOUD_WIDTH + 1.5 * cloudXGap, y + 3 * cloudYGap, x + CLOUD_WIDTH + 1.75 * cloudXGap + getRandomInt(30, 50), y + 3.5 * cloudYGap, x + CLOUD_WIDTH + cloudXGap, y + 4 * cloudYGap);
-  ctx.bezierCurveTo(x + CLOUD_WIDTH + cloudXGap, y + 4 * cloudYGap, x +  + CLOUD_WIDTH + 0.5 * cloudXGap + getRandomInt(30, 50), y + 4.5 * cloudYGap, x + CLOUD_WIDTH, y + CLOUD_HEIGHT);
+  ctx.bezierCurveTo(x + CLOUD_WIDTH + cloudXGap, y + 4 * cloudYGap, x + CLOUD_WIDTH + 0.5 * cloudXGap + getRandomInt(30, 50), y + 4.5 * cloudYGap, x + CLOUD_WIDTH, y + CLOUD_HEIGHT);
 
   // Cloud bottom
   ctx.bezierCurveTo(x + CLOUD_WIDTH, y + CLOUD_HEIGHT, x + 5.5 * cloudXGap, y + CLOUD_HEIGHT + getRandomInt(10, 30), x + 5 * cloudXGap, y + CLOUD_HEIGHT);
