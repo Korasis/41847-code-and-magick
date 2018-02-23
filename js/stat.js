@@ -74,7 +74,7 @@ var getMaxElement = function (arr) {
 // generate random
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}
 
 // main renderer
 window.renderStatistics = function (ctx, players, times) {
